@@ -23,7 +23,7 @@ fi
 
 
 reviewer=`whoami`
-./previewers.bash $mreq | grep "$reviewer"
+previewers.bash $mreq | grep "$reviewer"
 if [ "$?" != "0" ]
 then
     echo "ERROR: $reviewer is not a reviewer for $mreq"
