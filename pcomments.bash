@@ -1,7 +1,7 @@
 #!/bin/bash
 # Print all comments made by a reviewer for a branch sorted by iteration.
 
-source math_ops.sh
+source math_ops.bash
 
 function print_usage
 {

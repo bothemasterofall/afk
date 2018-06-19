@@ -1,7 +1,7 @@
 #!/bin/bash
 # Edit comments for latest iteration
 
-source math_ops.sh
+source afk_common.bash
 
 function print_usage
 {

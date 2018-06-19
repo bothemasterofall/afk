@@ -1,7 +1,7 @@
 #!/bin/bash
 # Add iteration to merge request
 
-source math_ops.sh
+source afk_common.bash
 
 function print_usage
 {
