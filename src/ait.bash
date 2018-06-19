@@ -5,7 +5,7 @@ source afk_common.bash
 
 function print_usage
 {
-    echo "usage: $0 repo/mr hash"
+    echo "usage: $0 repo/branch hash"
 }
 
 # Main

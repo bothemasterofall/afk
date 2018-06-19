@@ -3,7 +3,7 @@
 
 function print_usage
 {
-    echo "usage: $0 repo/mr dep"
+    echo "usage: $0 repo/branch dep"
 }
 
 mreq=$1

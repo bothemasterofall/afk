@@ -5,7 +5,7 @@ source math_ops.bash
 
 function print_usage
 {
-    echo "usage: $0 repo/mr reviewer it"
+    echo "usage: $0 repo/branch reviewer it"
 }
 
 mreq=$1

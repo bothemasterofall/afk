@@ -3,7 +3,7 @@
 
 function print_usage
 {
-    echo "usage: $0 repo/mr"
+    echo "usage: $0 repo/branch"
 }
 
 # Finds all numbered files, echos greatest

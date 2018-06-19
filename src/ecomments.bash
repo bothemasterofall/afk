@@ -5,7 +5,7 @@ source afk_common.bash
 
 function print_usage
 {
-    echo "usage: $0 repo/mr"
+    echo "usage: $0 repo/branch"
 }
 
 mreq=$1

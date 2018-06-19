@@ -3,7 +3,7 @@
 
 function print_usage
 {
-    echo "usage: $0 repo mr desc"
+    echo "usage: $0 repo branch desc"
 }
 
 target_repo=$1
