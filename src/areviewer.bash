@@ -1,6 +1,8 @@
 #!/bin/bash
 # Add reviewer to merge request
 
+source afk_common.bash
+
 function print_usage
 {
     echo "usage: $0 repo/branch reviewer"
@@ -16,23 +18,9 @@ fi
 reviewer=$2
 if [ -z "$reviewer" ]
 then
-    print_usage
-    exit 1
+    reviewer=`whoami`
 fi
 
-summary=$mreq/SUMMARY
-if [ ! -e $summary ]
-then
-    echo "ERROR: $mreq invalid"
-    exit 1
-fi
+add_unique_field_to_summary $mreq REVIEWER $reviewer
 
-grep $reviewer $summary
-if [ "$?" == "0" ]
-then
-    echo "$reviewer is already an reviewer"
-    exit 1
-fi
-
-echo REVIEWER: $reviewer >> $summary
-exit 0
+exit $?

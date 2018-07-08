@@ -1,6 +1,8 @@
 #!/bin/bash
 # Add PR to merge request
 
+source afk_common.bash
+
 function print_usage
 {
     echo "usage: $0 repo/branch pr"
@@ -20,19 +22,6 @@ then
     exit 1
 fi
 
-summary=$mreq/SUMMARY
-if [ ! -e $summary ]
-then
-    echo "ERROR: $mreq invalid"
-    exit 1
-fi
+add_unique_field_to_summary $mreq PR $pr
 
-grep $pr $summary
-if [ "$?" == "0" ]
-then
-    echo "$pr is already linked"
-    exit 1
-fi
-
-echo PR: $pr >> $summary
-exit 0
+exit $?

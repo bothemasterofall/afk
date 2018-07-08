@@ -1,6 +1,8 @@
 #!/bin/bash
 # Add author to merge request. Default is whoami.
 
+source afk_common.bash
+
 function print_usage
 {
     echo "usage: $0 repo/branch [author]"
@@ -19,19 +21,6 @@ then
     author=`whoami`
 fi
 
-summary=$mreq/SUMMARY
-if [ ! -e $summary ]
-then
-    echo "ERROR: $mreq invalid"
-    exit 1
-fi
+add_unique_field_to_summary $mreq AUTHOR $author
 
-grep $author $summary
-if [ "$?" == "0" ]
-then
-    echo "$author is already an author"
-    exit 1
-fi
-
-echo AUTHOR: $author >> $summary
-exit 0
+exit $?
