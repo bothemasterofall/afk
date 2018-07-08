@@ -60,14 +60,14 @@ fi
 
 cd ../../
 
-for i in `previewers.bash $mreq`
+for i in `./previewers.bash $mreq`
 do
     comment_file=${mreq}/${staging_area}/${i}.csv
-    if [ "$newit" == "0" ]
+    if [ "$newit" == "1" ]
     then
         echo -e '\t\t\t\t\t\t' >> $comment_file
     else
-        pcomments.bash $mreq $i $cur_it >> $comment_file
+        ./pcomments.bash $mreq $i $cur_it >> $comment_file
     fi
 
     chmod 664 $comment_file
